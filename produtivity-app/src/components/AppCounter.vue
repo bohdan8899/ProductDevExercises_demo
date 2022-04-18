@@ -13,30 +13,22 @@
 
 <script>
 
-// import { mapState } from 'vuex';
+import { mapState } from 'vuex';
 export default {
   name: 'AppCounter',
-  props: {
-    counter: {
-      type: Number,
-      default: 0
-    }
-  },
   components: {
   },
-  // computed: {
-  //   ...mapState('counter', {
-  //     value: state => state.count,
-  //   }),
-  // },
+  computed: {
+    ...mapState('counter', {
+      value: state => state.count,
+    }),
+  },
   methods: {
     increment() {
-      // this.$store.commit('counter/increment');
-      this.$emit('increment');
+      this.$store.commit('counter/increment');
     },
     decrement() {
-      // this.$store.commit('counter/decrement');
-      this.$emit('decrement');
+      this.$store.commit('counter/decrement');
     },
   }
 }
